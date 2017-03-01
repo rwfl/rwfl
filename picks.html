@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<script src="dweet.io.js"></script>
 <style> 
 @import url('https://fonts.googleapis.com/css?family=Orbitron');
 @font-face {
@@ -12,7 +12,8 @@ body {
 	background-color: #292929;
 	text-align:center;
 	font-family: orbitron;
-	font-size: 25px
+	font-size: 25px;
+	color: white;
 }
 h1 {
 	color: yellow;
@@ -30,6 +31,15 @@ h1 {
     margin: 10px;
 	color: yellow;
 }
+.selector {
+	font-family: orbitron;
+	font-size: 20px;
+}
+.text {
+	padding: 1px;
+	margin: 10px;
+	font-size: 20px;
+}
 </style>
 	<h1>
 		<a href="https://rwfl.github.io" class="logo">
@@ -46,5 +56,34 @@ h1 {
 
 <body>
 	<iframe width="720" height="780" src="https://docs.google.com/spreadsheets/d/1V8a8NvNxu7iWFTpuYgHjLRdmnWaP0wZcMYKF_9fuRm8/pubhtml?gid=1253630918&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+	<p class="text">    
+		<select id="robotSelect" class ="selector">
+			<option selected disabled>Robot</option>
+		</select>
+	</p>
+	<pre id="fileDisplayArea"><pre>
 </body>
 </html>
+
+<script type="text/javascript">
+	var sel = document.getElementById('robotSelect');
+	sel.onload = getRobots();
+	
+	function getRobots(){
+		dweetio.get_latest_dweet_for("rwfl", function(err, dweet){
+			var dweet = dweet[0]; // Dweet is always an array of 1
+			var robots = dweet.content; // The content of the dweet
+			robots = robots.Robots;
+			var fragment = document.createDocumentFragment();
+			robots.forEach(function(robot, index) {
+				var opt = document.createElement('option');
+				opt.innerHTML = robot;
+				opt.value = robot;
+				fragment.appendChild(opt);
+			});
+			sel.appendChild(fragment);
+		});
+	}
+
+	
+</script>
