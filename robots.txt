@@ -1,0 +1,56 @@
+Aftershock
+Apex
+Apollo
+Behemoth
+Carbide 
+Cherub
+Chimera 2
+Cobra
+Concussion
+Coyote
+Crackers n Smash
+Crank-e
+Crushtacean
+Draven
+Eruption
+Expulsion
+Foxic
+Frostbite
+Heavy Metal
+High-5
+Hobgoblin
+Ironside 3
+Jellyfish
+M.R Speed Squared
+MeggaMouse
+Ms Nightshade
+Nuts 2
+PP3D
+Pulsar
+Push to Exit
+Rapid
+Rusty
+Sabretooth
+Supernova
+Tauron
+Terrorhurtz
+Thor
+TMHWK
+Trolly Rage
+Wyrm
+
+//var robots = ["Aftershock", "Apex", "Apollo", "Behemoth", "Carbide", "Cherub", "Chimera 2", "Cobra", "Concussion", "Coyote", "Crackers n Smash",
+	//"Crank-e", "Crushtacean", "Draven", "Eruption", "Expulsion", "Foxic", "Frostbite", "Heavy Metal", "High-5", "Hobgoblin", "Ironside 3", "Jellyfish", 
+	//"M.R Speed Squared", "MeggaMouse", "Ms Nightshade", "Nuts 2", "PP3D", "Pulsar", "Push to Exit", "Rapid", "Rusty", "Sabretooth", "Supernova", "Tauron",
+	//"Terrorhurtz", "Thor", "TMHWK", "Trolly Rage", "Wyrm" ];
+
+rwfl_robots
+{"Robots":["Aftershock","Apex","Apollo","Behemoth","Carbide","Cherub","Chimera 2","Cobra","Concussion","Coyote","Crackers n Smash","Crank-e","Crushtacean","Draven","Eruption","Expulsion","Foxic","Frostbite","Heavy Metal","High-5","Hobgoblin","Ironside 3","Jellyfish","M.R Speed Squared","MeggaMouse","Ms Nightshade","Nuts 2","PP3D","Pulsar","Push to Exit","Rapid","Rusty","Sabretooth","Supernova","Tauron","Terrorhurtz","Thor","TMHWK","Trolly Rage","Wyrm"],
+"Picked":[0,"aah",0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}
+
+rwfl_playorder
+{"Players":["Hello", "Jeff", "Horacio", "Blahblah", "mehh", "aaaaaaaaaaaaah", "bib", "bob", "nah", "kk"],
+"Turn":[1,0,0,0,0,0,0,0,0,0]}
+
+list of bots:
+<iframe width="345" height="1035" src="https://docs.google.com/spreadsheets/d/1V8a8NvNxu7iWFTpuYgHjLRdmnWaP0wZcMYKF_9fuRm8/pubhtml?gid=1619100401&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
