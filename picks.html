@@ -56,72 +56,9 @@ h1 {
 </head>
 
 <body>
-	<iframe width="1055" height="640" src="https://docs.google.com/spreadsheets/d/1V8a8NvNxu7iWFTpuYgHjLRdmnWaP0wZcMYKF_9fuRm8/pubhtml?gid=1202426641&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
-
-	<p id=whosTurn>Pick your robot </p>
-	
-	<select id="robotSelect" class ="selector">
-		<option selected disabled>Robot</option>
-	</select>
-	
-	<button id="picker" class="selector" onclick="pickRobot()">Pick</button></p>
-	
-	<p id=error></p>
+	<iframe width="720" height="780" src="https://docs.google.com/spreadsheets/d/1V8a8NvNxu7iWFTpuYgHjLRdmnWaP0wZcMYKF_9fuRm8/pubhtml?gid=1253630918&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 	
 </body>
 </html>
 
-<script type="text/javascript">
-	var playSel = document.getElementById('whosTurn');
-	var players = [];
-	var turn = [];
-	var turnNumber = 0;
-	var roboSel = document.getElementById('robotSelect');
-	var robots = [];
-	var picked = [];
-	playSel.onload = getPlayers();
-	roboSel.onload = getRobots();
-
-	function getPlayers(){
-		dweetio.get_latest_dweet_for("rwfl_playorder", function(err, dweet){
-			var dweet = dweet[0]; 
-			players = dweet.content.Players;
-			turn = dweet.content.Turn;
-			turnNumber = turn.indexOf(1);
-			playSel.innerHTML = players[turnNumber] + "'s turn to pick";
-		});
-	}
-	
-	function getRobots(){
-		dweetio.get_latest_dweet_for("rwfl_robots", function(err, dweet){
-			var dweet = dweet[0];
-			robots = dweet.content.Robots; 
-			picked = dweet.content.Picked;
-
-			for(var i = 0; i < robots.length; i++) {
-				var opt = document.createElement('option');
-				opt.innerHTML = robots[i];
-				opt.value = robots[i];
-				if (picked[i] == 0){
-					roboSel.appendChild(opt); // if not already picked add to list to pick.
-				}
-			}
-		});
-	}	
-	
-	function pickRobot(){
-		var pickedRobot = roboSel.value;
-		var a = robots.indexOf(pickedRobot); // find location of robot on list
-		console.log(robots)
-		// pick the bot
-		picked[a] = players[turnNumber];
-		dweetio.dweet_for("rwfl_robots", {
-			"Robots":robots,"Picked":picked
-		}, function(err, dweet){console.log(dweet.content);});
-		
-		// change turn
-		turn[turnNumber] = 0
-		turn[turnNumber+1] = 1
-		dweetio.dweet_for("rwfl_playorder", {"Players":players,"Turn":turn}, function(err, dweet){console.log(dweet.content);});
-	}
 </script>
